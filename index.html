@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Brasa & Pão</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=DM+Sans:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="top">
+        <div class="wrap"><a class="logo" id="brand" href="#/"></a>
+            <nav id="nav"></nav><button class="btn dk sm" id="cartbtn" data-act="cart">Pedido (<span
+                    id="cc">0</span>)</button>
+        </div>
+    </header>
+    <div id="sync" role="status">Demonstração • pedidos salvos neste navegador</div><main id="app"></main>
+    <div class="scrim" id="scrim" data-act="close"></div>
+    <aside class="drawer" id="drawer" aria-label="Seu pedido">
+        <div class="dh">
+            <h3>Seu pedido</h3><button class="btn gh sm" data-act="close">Fechar</button>
+        </div>
+        <div class="db">
+            <div id="items"></div>
+            <form id="co"><label>Nome<input name="name" required></label><label>WhatsApp<input name="phone"
+                        inputmode="tel" required></label>
+                <div class="seg"><label><input type="radio" name="mode" value="entrega" checked>
+                        Entrega</label><label><input type="radio" name="mode" value="retirada"> Retirada</label></div>
+                <div id="addr" style="display:grid;gap:10px"><label>Endereço<input name="addr"
+                            placeholder="Rua, número, bairro"></label><button type="button" class="btn gh sm"
+                        data-act="geo">Usar minha localização</button></div>
+                <label>Pagamento<select name="pay">
+                        <option>Pix</option>
+                        <option>Cartão na entrega</option>
+                        <option>Dinheiro</option>
+                    </select></label>
+                <label id="chg" hidden>Troco para quanto?<input name="change" inputmode="decimal"
+                        placeholder="Ex.: 100"></label>
+                <label>Observações<textarea name="obs" rows="2"></textarea></label>
+                <div style="display:flex;gap:8px"><input id="cin" placeholder="Cupom de desconto"
+                        autocomplete="off"><button type="button" class="btn gh sm" data-act="cpn">Aplicar</button></div>
+                <div id="tot"></div><button class="btn" id="send">Enviar pedido</button>
+            </form>
+        </div>
+    </aside>
+    <div id="ticket"></div>
+    <dialog id="pm"></dialog>
+    <dialog id="pe"></dialog>
+    <div class="toast" id="toast" role="status"></div>
+    <script src="app.js"></script>
+</body>
+
+</html>
